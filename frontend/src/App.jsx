@@ -2,7 +2,6 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider } from './contexts/AuthContext'
 import { SocketProvider } from './contexts/SocketContext'
 import ProtectedRoute from './components/ProtectedRoute'
-import Layout from './components/Layout'
 
 // Auth pages
 import AdminLogin from './pages/AdminLogin'
