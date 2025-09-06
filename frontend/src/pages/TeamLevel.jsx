@@ -92,7 +92,7 @@ const TeamLevel = () => {
           <h2 className="text-lg font-semibold text-gray-900 mb-4">Reference Image</h2>
           <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
             <img
-              src={`http://localhost:4000${progress.assignedImage.url}`}
+              src={`${import.meta.env.VITE_API_BASE_URL}${progress.assignedImage.url}`}
               alt="Reference"
               className="w-full h-full object-cover"
             />

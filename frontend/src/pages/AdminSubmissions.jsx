@@ -76,7 +76,7 @@ const AdminSubmissions = () => {
                   <h3 className="font-medium text-gray-900 mb-2">Submitted Image</h3>
                   <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
                     <img
-                      src={`http://localhost:4000${submission.submittedImageUrl}`}
+                      src={`${import.meta.env.VITE_API_BASE_URL}${submission.submittedImageUrl}`}
                       alt="Submission"
                       className="w-full h-full object-cover"
                     />
@@ -88,7 +88,7 @@ const AdminSubmissions = () => {
                   <h3 className="font-medium text-gray-900 mb-2">Reference Image</h3>
                   <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
                     <img
-                      src={`http://localhost:4000${submission.assignedImageId.url}`}
+                      src={`${import.meta.env.VITE_API_BASE_URL}${submission.assignedImageId.url}`}
                       alt="Reference"
                       className="w-full h-full object-cover"
                     />

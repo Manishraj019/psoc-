@@ -76,7 +76,7 @@ const SubmissionStatus = () => {
                 <div className="flex items-center space-x-4">
                   <div className="w-16 h-16 bg-gray-200 rounded-lg overflow-hidden">
                     <img
-                      src={`http://localhost:4000${submission.submittedImageUrl}`}
+                      src={`${import.meta.env.VITE_API_BASE_URL}${submission.submittedImageUrl}`}
                       alt="Submission"
                       className="w-full h-full object-cover"
                     />

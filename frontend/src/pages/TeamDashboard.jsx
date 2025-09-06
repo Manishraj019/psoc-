@@ -102,7 +102,7 @@ const TeamDashboard = () => {
               <h3 className="text-sm font-medium text-gray-700 mb-2">Reference Image</h3>
               <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
                 <img
-                  src={`http://localhost:4000${progress.assignedImage.url}`}
+                  src={`${import.meta.env.VITE_API_BASE_URL}${progress.assignedImage.url}`}
                   alt="Reference"
                   className="w-full h-full object-cover"
                 />

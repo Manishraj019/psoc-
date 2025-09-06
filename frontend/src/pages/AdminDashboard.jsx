@@ -233,7 +233,7 @@ const AdminDashboard = () => {
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-gray-200 rounded-lg overflow-hidden">
                     <img
-                      src={`http://localhost:4000${submission.submittedImageUrl}`}
+                      src={`${import.meta.env.VITE_API_BASE_URL}${submission.submittedImageUrl}`}
                       alt="Submission"
                       className="w-full h-full object-cover"
                     />
