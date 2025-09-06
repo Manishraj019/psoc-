@@ -31,11 +31,7 @@ RUN apt-get update && apt-get install -y \
 # Copy package files
 COPY package*.json ./
 
-<<<<<<< HEAD
 # Install dependencies with OpenCV build
-=======
-# Install dependencies
->>>>>>> d2e031eaaff9496a69c3f6ec496242d10ec818ee
 RUN npm install
 
 # Copy source code
