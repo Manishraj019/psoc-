@@ -1,5 +1,5 @@
-# Use Node.js 18 LTS with Ubuntu base for better OpenCV support
-FROM node:18-bullseye
+# Use Node.js 18 LTS Alpine for lightweight build
+FROM node:18-alpine
 
 # Set working directory
 WORKDIR /app
@@ -27,8 +27,12 @@ RUN apt-get update && apt-get install -y \
     gfortran \
     wget \
     && rm -rf /var/lib/apt/lists/*
+    make \
+    g++ \
+    pkgconfig \
+    curl
 
-# Copy package files
+# Copy package files first for better caching
 COPY package*.json ./
 
 # Install dependencies with OpenCV build
@@ -39,6 +43,13 @@ COPY . .
 
 # Create uploads directory
 RUN mkdir -p uploads
+
+# Create non-root user for security
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nodejs -u 1001 && \
+    chown -R nodejs:nodejs /app
+
+USER nodejs
 
 # Expose port
 EXPOSE 4000

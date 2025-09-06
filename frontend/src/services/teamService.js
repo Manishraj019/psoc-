@@ -20,8 +20,24 @@ export const teamService = {
     return response.data
   },
 
+  // Submit photo for specific level
+  async submitPhoto(levelId, formData) {
+    const response = await apiClient.post(`/team/submit/${levelId}`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    })
+    return response.data
+  },
+
   // Get submission history
   async getSubmissionHistory() {
+    const response = await apiClient.get('/team/submissions')
+    return response.data
+  },
+
+  // Get submissions (alias for getSubmissionHistory)
+  async getSubmissions() {
     const response = await apiClient.get('/team/submissions')
     return response.data
   },
@@ -29,6 +45,12 @@ export const teamService = {
   // Get current submission status
   async getCurrentSubmissionStatus() {
     const response = await apiClient.get('/team/submission-status')
+    return response.data
+  },
+
+  // Get game status
+  async getGameStatus() {
+    const response = await apiClient.get('/team/game-status')
     return response.data
   },
 }
