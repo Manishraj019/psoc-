@@ -7,6 +7,8 @@
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
     "seed": "node src/scripts/seed.js",
+    "seed:admin": "node src/scripts/adminSeeder.js",
+    "test:admin": "node src/scripts/testAdminLogin.js",
     "test": "jest",
     "test:watch": "jest --watch"
   },
