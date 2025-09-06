@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useAuth } from '../contexts/AuthContext'
 import { adminService } from '../services/adminService'
-import { apiClient } from '../services/apiClient'
+import apiClient from '../services/apiClient'
 
 import { 
   Users, 
