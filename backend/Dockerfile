@@ -27,10 +27,7 @@ RUN apt-get update && apt-get install -y \
     gfortran \
     wget \
     && rm -rf /var/lib/apt/lists/*
-    make \
-    g++ \
-    pkgconfig \
-    curl
+
 
 # Copy package files first for better caching
 COPY package*.json ./
