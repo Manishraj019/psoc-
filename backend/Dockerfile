@@ -1,22 +1,38 @@
-# Use Node.js 18 LTS
-FROM node:18-alpine
+# Use Node.js 18 LTS with Ubuntu base for better OpenCV support
+FROM node:18-bullseye
 
 # Set working directory
 WORKDIR /app
 
 # Install system dependencies for OpenCV
-RUN apk add --no-cache \
+RUN apt-get update && apt-get install -y \
     python3 \
-    make \
-    g++ \
-    opencv-dev \
-    pkgconfig
+    python3-pip \
+    build-essential \
+    cmake \
+    pkg-config \
+    libopencv-dev \
+    libopencv-contrib-dev \
+    libgtk-3-dev \
+    libavcodec-dev \
+    libavformat-dev \
+    libswscale-dev \
+    libv4l-dev \
+    libxvidcore-dev \
+    libx264-dev \
+    libjpeg-dev \
+    libpng-dev \
+    libtiff-dev \
+    libatlas-base-dev \
+    gfortran \
+    wget \
+    && rm -rf /var/lib/apt/lists/*
 
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci --omit=dev
+# Install dependencies with OpenCV build
+RUN npm install
 
 # Copy source code
 COPY . .

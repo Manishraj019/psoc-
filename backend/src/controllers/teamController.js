@@ -1,6 +1,6 @@
 const Submission = require('../models/Submission');
 const assignmentService = require('../services/assignmentService');
-const imageService = require('../services/imageService');
+const imageService = require('../services/imageServiceSimple');
 const socketService = require('../services/socketService');
 
 class TeamController {
