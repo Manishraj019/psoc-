@@ -33,53 +33,43 @@ function App() {
             {/* Admin protected routes */}
             <Route path="/admin" element={
               <ProtectedRoute allowedRoles={['admin']}>
-                <Layout>
+                
                   <AdminDashboard />
-                </Layout>
+                
               </ProtectedRoute>
             } />
             <Route path="/admin/levels" element={
               <ProtectedRoute allowedRoles={['admin']}>
-                <Layout>
+                
                   <AdminLevelManager />
-                </Layout>
+                
               </ProtectedRoute>
             } />
             <Route path="/admin/submissions" element={
               <ProtectedRoute allowedRoles={['admin']}>
-                <Layout>
                   <AdminSubmissions />
-                </Layout>
               </ProtectedRoute>
             } />
             <Route path="/admin/leaderboard" element={
               <ProtectedRoute allowedRoles={['admin']}>
-                <Layout>
                   <AdminLeaderboard />
-                </Layout>
               </ProtectedRoute>
             } />
             
             {/* Team protected routes */}
             <Route path="/team" element={
               <ProtectedRoute allowedRoles={['team']}>
-                <Layout>
                   <TeamDashboard />
-                </Layout>
               </ProtectedRoute>
             } />
             <Route path="/team/level" element={
               <ProtectedRoute allowedRoles={['team']}>
-                <Layout>
                   <TeamLevel />
-                </Layout>
               </ProtectedRoute>
             } />
             <Route path="/team/submission-status" element={
               <ProtectedRoute allowedRoles={['team']}>
-                <Layout>
                   <SubmissionStatus />
-                </Layout>
               </ProtectedRoute>
             } />
             
